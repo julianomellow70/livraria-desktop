@@ -16,7 +16,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/autor_formulario.fxml"));
         primaryStage.setTitle("Sistema gerenciamento de livraria");
-        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.setScene(new Scene(root, 740, 600));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

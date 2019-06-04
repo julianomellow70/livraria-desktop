@@ -85,14 +85,71 @@ public class AutorDAO {
        }catch (SQLException e){
            throw  new RuntimeException(e);
        }
+    }
 
+    public void deletar(Autor autor) {
+        String sql = "Delete from autores where id = ?";
 
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+
+            stmt.setInt(1, autor.getId());
+
+            stmt.execute();
+
+            conexao.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
-    public void deletar(Autor autor){
+
+    public Autor listarPorId(Autor autor) {
+        String sql = "Select * from autores where id = ?";
+        try{
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1,autor.getId());
+
+            ResultSet rs = stmt.executeQuery();
+            Autor autorrs = new Autor();
+            while (rs.next()){
+                autorrs.setId(rs.getInt("id"));
+                autorrs.setEmail(rs.getString("email"));
+                autorrs.setNome(rs.getString("nome"));
+            }
+            return autorrs;
+
+        }catch (SQLException e){
+            throw new RuntimeException (e);
+
+        }
 
     }
-    public void listarPorID (Autor autor){
 
+    public List<Autor> listar_porCampos (Autor autor){
+        String sql = "Select * from autores where nome like % ? % or email like % ? %;";
+
+        try{
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1,autor.getNome());
+            stmt.setString(2,autor.getEmail());
+
+            ResultSet rs = stmt.executeQuery();
+            List<Autor> autores = new ArrayList<>();
+            Autor autorrs = new Autor();
+
+            while (rs.next()){
+                autorrs.setId(rs.getInt("id"));
+                autorrs.setEmail(rs.getString("email"));
+                autorrs.setNome(rs.getString("nome"));
+                autores.add(autorrs);
+            }
+            return autores;
+
+        }catch (SQLException e){
+            throw new RuntimeException (e);
+
+        }
     }
+
 }
