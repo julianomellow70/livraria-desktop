@@ -6,14 +6,14 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-public Connection getConnection (){
+    public Connection getConnection() {
 
-    try {
-        return DriverManager.getConnection("jdbc:mysql://localhost/db_livraria","livreiro","Suporte99");
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
+        try {
+            return DriverManager.getConnection("jdbc:mysql://localhost/db_livraria", "livreiro", "Suporte99");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
-}
 
 
 }

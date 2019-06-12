@@ -4,6 +4,18 @@ public class Autor {
     private int id;
     private String nome, email;
 
+    public Autor() {
+        this.id = 0;
+        this.nome = "";
+        this.email = "";
+    }
+
+    public Autor(int id, String nome, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }

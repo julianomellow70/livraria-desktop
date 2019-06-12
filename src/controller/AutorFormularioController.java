@@ -1,75 +1,158 @@
 package controller;
 
 import dao.AutorDAO;
-import javafx.beans.property.Property;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import model.Autor;
 
-import javax.swing.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class AutorFormularioController {
+public class AutorFormularioController  {
 
-@FXML
+
+
+    @FXML
     private TextField txfNome;
-@FXML
+    @FXML
     private TextField txfEmail;
-@FXML
+    @FXML
     private Button btnSalvar;
-@FXML
-    private TableView tableAutores;
-@FXML
-    private TableColumn colunaIDAutor;
-@FXML
-    private TableColumn colunaNomeAutor;
-@FXML
-    private TableColumn colunaEmailAutor;
+    @FXML
+    private TableView<Autor> tableAutores;
+    @FXML
+    private TableColumn<Autor, Integer> colunaIDAutor;
+    @FXML
+    private TableColumn<Autor, String> colunaNomeAutor;
+    @FXML
+    private TableColumn<Autor, String> colunaEmailAutor;
+    @FXML
+    private Button btnTodos;
+    @FXML
+    private Button btnExcluir;
+    @FXML
+    private Button btnUpdate;
 
 
 
-public void salvar(){
 
 
-    Autor autor = new Autor();
-    autor.setNome(txfNome.getText());
-    autor.setEmail(txfEmail.getText());
 
-    AutorDAO autorDAO = new AutorDAO();
-    autorDAO.inserir(autor);
 
-    limparCampos();
+    public AutorFormularioController (){
+        //this.txfNome = new TextField();
+        //this.txfNome.setText("teste");
+        //this.txfNome.setEditable(false);
+    }
 
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle("Cadastro de autores");
-    alert.setHeaderText("Cadastro de autores");
-    alert.setContentText("Autor cadastrado com sucesso");
-    alert.showAndWait();
-}
+    @FXML
+    public void initialize(){
+
+    }
+
+    public void passarMouseBotaoTodos (){
+    btnTodos.setStyle("-fx-background-color: #000000;");
+    btnTodos.setTextFill(Color.WHITE);
+    }
+    public void tirarMouseBotaoTodos(){
+        btnTodos.setStyle("-fx-background-color: #D2691E;");
+        btnTodos.setTextFill(Color.BLACK);
+    }
+    public void passarMouseBotaoExcluir (){
+        btnExcluir.setStyle("-fx-background-color: #000000;");
+        btnExcluir.setTextFill(Color.WHITE);
+    }
+    public void tirarMouseBotaoExcluir(){
+        btnExcluir.setStyle("-fx-background-color: #B22222;");
+        btnExcluir.setTextFill(Color.WHITE);
+    }
+    public void passarMouseBotaoUpdate (){
+        btnUpdate.setStyle("-fx-background-color: #000000;");
+        btnUpdate.setTextFill(Color.WHITE);
+    }
+    public void tirarMouseBotaoUpdate(){
+        btnUpdate.setStyle("-fx-background-color: #B22222;");
+        btnUpdate.setTextFill(Color.WHITE);
+    }
+
+    public void preencher_todos() {
+
+
+        colunaIDAutor.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colunaNomeAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaEmailAutor.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+
+        tableAutores.setItems(lista_autores_tabela());
+    }
+
+
+    public void startUpdate(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/autor_formulario_update.fxml"));
+
+        primaryStage.setTitle("Sistema gerenciamento de livraria");
+        primaryStage.setScene(new Scene(root, 370, 250));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
+    public void cliqueMouseBotaoUpdate () throws Exception {
+       Autor autor;
+        autor = tableAutores.getSelectionModel().getSelectedItem();
+        startUpdate(new Stage());
+
+
+    }
+
+
+    private ObservableList<Autor> lista_autores_tabela() {
+        ObservableList<Autor> row_autor = FXCollections.observableArrayList();
+        AutorDAO autorDAO = new AutorDAO();
+        List<Autor> autores = autorDAO.listarTodos();
+        for (Autor autor_l : autores) {
+            row_autor.add(new Autor(autor_l.getId(), autor_l.getNome(), autor_l.getEmail()));
+        }
+        return row_autor;
+    }
+
+    public void salvar() {
+
+
+        Autor autor = new Autor();
+        autor.setNome(txfNome.getText());
+        autor.setEmail(txfEmail.getText());
+
+        AutorDAO autorDAO = new AutorDAO();
+        autorDAO.inserir(autor);
+
+        limparCampos();
+        preencher_todos();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Cadastro de autores");
+        alert.setHeaderText("Cadastro de autores");
+        alert.setContentText("Autor cadastrado com sucesso");
+        alert.showAndWait();
+    }
 
     private void limparCampos() {
         txfNome.setText("");
         txfEmail.setText("");
     }
 
-    public void preencher_autores (){
-    Autor autor = new Autor();
-    AutorDAO autorDAO = new AutorDAO();
-
-
-    autor.setNome(txfNome.getText());
-    autor.setEmail(txfEmail.getText());
-    List<Autor> autores = new ArrayList<>();
-    autores = autorDAO.listar_porCampos(autor);
-
-    for(Autor autor_result : autores){
-
-        System.out.println(autor_result.getNome());
-        System.out.println(autor_result.getEmail());
-
-    }
+    public void cliqueMouseBotaoExcluir (){
+        Autor autor = tableAutores.getSelectionModel().getSelectedItem();
+        AutorDAO autorDAO = new AutorDAO();
+        autorDAO.deletar(autor);
+        preencher_todos();
     }
 
 
