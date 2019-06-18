@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="1030.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditoraController">
+    <children>
+        <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="325.0" prefWidth="745.0" style="-fx-background-color: #;">
+            <children>
+                <Label layoutX="47.0" layoutY="72.0" text="Nome:">
+                    <font>
+                        <Font name="Dyuthi" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txfNome" disable="true" layoutX="38.0" layoutY="96.0" prefHeight="31.0" prefWidth="290.0" />
+                <TextField fx:id="txfSite" disable="true" layoutX="38.0" layoutY="166.0" prefHeight="31.0" prefWidth="290.0" />
+                <Label layoutX="44.0" layoutY="131.0" prefHeight="32.0" prefWidth="73.0" text="Site">
+                    <font>
+                        <Font name="Dyuthi" size="18.0" />
+                    </font>
+                </Label>
+                <Button id="btnSalvar" fx:id="btnSalvar" disable="true" layoutX="132.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
+                    <font>
+                        <Font name="Dyuthi" size="18.0" />
+                    </font>
+                </Button>
+                <Pane layoutX="-5.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="1047.0" style="-fx-background-color: #DAA520;">
+                    <children>
+                        <Label layoutX="23.0" layoutY="-7.0" prefHeight="16.0" prefWidth="290.0" text="Editoras">
+                            <font>
+                                <Font name="Dyuthi" size="48.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            <Button id="btnSalvar" fx:id="btnNovo" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoNovo" prefHeight="18.0" prefWidth="111.0" style="-fx-background-color: #D2691E;" text="Novo" textFill="WHITE">
+               <font>
+                  <Font name="Dyuthi" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="350.0" layoutY="70.0" text="Endereco">
+               <font>
+                  <Font name="Dyuthi" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfEndereco" disable="true" layoutX="344.0" layoutY="96.0" prefHeight="31.0" prefWidth="290.0" />
+            <TextField fx:id="txfBairro" disable="true" layoutX="350.0" layoutY="166.0" prefHeight="31.0" prefWidth="290.0" />
+            <Label layoutX="347.0" layoutY="129.0" prefHeight="32.0" prefWidth="73.0" text="Bairro">
+               <font>
+                  <Font name="Dyuthi" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfTelefone" disable="true" layoutX="41.0" layoutY="232.0" prefHeight="31.0" prefWidth="290.0" />
+            <Label layoutX="37.0" layoutY="197.0" prefHeight="32.0" prefWidth="73.0" text="Telefone">
+               <font>
+                  <Font name="Dyuthi" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="197.0" prefHeight="32.0" prefWidth="121.0" text="Municipio">
+               <font>
+                  <Font name="Dyuthi" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbMunicipio" disable="true" layoutX="350.0" layoutY="232.0" prefHeight="31.0" prefWidth="290.0" />
+            <Button id="btnSalvar" fx:id="btnSalvar1" disable="true" layoutX="646.0" layoutY="237.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #D2691E;" text="NOVO" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            </children>
+        </Pane>
+        <TableView fx:id="tableEditora" layoutX="13.0" layoutY="333.0" prefHeight="248.0" prefWidth="925.0">
+            <columns>
+                <TableColumn fx:id="colunaIDEditora" maxWidth="70" minWidth="70" text="ID" />
+                <TableColumn fx:id="colunaNomeEditora" prefWidth="391.0" text="NOME" />
+                <TableColumn fx:id="colunaEnderecoEditora" prefWidth="325.0" text="ENDERECO" />
+            <TableColumn fx:id="colunaSiteEditora" prefWidth="391.0" text="SITE" />
+            <TableColumn fx:id="colunaBairroEditora" prefWidth="325.0" text="BAIRRO" />
+            <TableColumn fx:id="colunaTelefoneEditora" prefWidth="325.0" text="TELEFONE" />
+            <TableColumn fx:id="colunaMunicipioEditora" prefWidth="325.0" text="MUNICIPIO" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+          <Button fx:id="btnExcluir" layoutX="842.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoExcluir" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Excluir" textFill="WHITE">
+              <font>
+                  <Font name="Dyuthi" size="18.0" />
+              </font>
+              <cursor>
+                  <Cursor fx:constant="HAND" />
+              </cursor>
+          </Button>
+      <Button fx:id="btnUpdate" layoutX="744.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoUpdate" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>

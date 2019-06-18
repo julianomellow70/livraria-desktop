@@ -92,7 +92,15 @@ public class AutorFormularioController  {
 
         tableAutores.setItems(lista_autores_tabela());
     }
-
+    private ObservableList<Autor> lista_autores_tabela() {
+        ObservableList<Autor> row_autor = FXCollections.observableArrayList();
+        AutorDAO autorDAO = new AutorDAO();
+        List<Autor> autores = autorDAO.listarTodos();
+        for (Autor autor_l : autores) {
+            row_autor.add(new Autor(autor_l.getId(), autor_l.getNome(), autor_l.getEmail()));
+        }
+        return row_autor;
+    }
 
     public void novoCad (){
         txfEmail.setDisable(false);
@@ -124,17 +132,6 @@ public class AutorFormularioController  {
 
 
 
-    }
-
-
-    private ObservableList<Autor> lista_autores_tabela() {
-        ObservableList<Autor> row_autor = FXCollections.observableArrayList();
-        AutorDAO autorDAO = new AutorDAO();
-        List<Autor> autores = autorDAO.listarTodos();
-        for (Autor autor_l : autores) {
-            row_autor.add(new Autor(autor_l.getId(), autor_l.getNome(), autor_l.getEmail()));
-        }
-        return row_autor;
     }
 
     public void salvar() {
@@ -202,6 +199,5 @@ public class AutorFormularioController  {
         autorDAO.deletar(autor);
         preencher_todos();
     }
-
 
 }
