@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="220.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AutorFormularioControllerUpdate">
+<AnchorPane prefHeight="220.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AutorFormularioControllerUpdate" >
    <children>
       <Label layoutX="14.0" layoutY="38.0" text="Nome:">
          <font>
@@ -26,12 +26,12 @@
          </font>
       </Label>
       <TextField fx:id="txfEmailUpdate" layoutX="14.0" layoutY="135.0" prefHeight="26.0" prefWidth="333.0" />
-      <Button id="btnSalvar" fx:id="btnSalvarUpdate" layoutX="257.0" layoutY="167.0" mnemonicParsing="false" onAction="#salvar" onDragEntered="#passarMouseBotaoTodos" onMouseDragExited="#tirarMouseBotaoTodos" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
+      <Button id="btnSalvar" fx:id="btnSalvarUpdate" layoutX="257.0" layoutY="167.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
       </Button>
-      <Button id="btnSalvar" fx:id="btnCancelarUpdate" layoutX="159.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#preencherTxfNomeUpdate" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #D2691E;" text="Cancelar" textFill="WHITE">
+      <Button id="btnSalvar" fx:id="btnCancelarUpdate" layoutX="159.0" layoutY="167.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #D2691E;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>

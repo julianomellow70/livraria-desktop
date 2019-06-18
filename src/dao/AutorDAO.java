@@ -69,6 +69,7 @@ public class AutorDAO {
     }
 
     public void alterar(Autor autor) {
+        System.out.println(autor.getId()+autor.getNome()+autor.getEmail());
         String sql = "update autores set nome = ?, email = ? where id = ?;";
         //preparar a conexao
         try {
@@ -79,6 +80,7 @@ public class AutorDAO {
             stmt.setInt(3, autor.getId());
             stmt.execute();
             System.out.println("Atualizado com sucesso!");
+
 
             //fechar a conexao
             conexao.close();

@@ -41,6 +41,8 @@ public class AutorFormularioController  {
     private Button btnExcluir;
     @FXML
     private Button btnUpdate;
+    @FXML
+    private Button btnNovo;
 
 
 
@@ -54,10 +56,6 @@ public class AutorFormularioController  {
         //this.txfNome.setEditable(false);
     }
 
-    @FXML
-    public void initialize(){
-
-    }
 
     public void passarMouseBotaoTodos (){
     btnTodos.setStyle("-fx-background-color: #000000;");
@@ -96,19 +94,34 @@ public class AutorFormularioController  {
     }
 
 
-    public void startUpdate(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/autor_formulario_update.fxml"));
-
-        primaryStage.setTitle("Sistema gerenciamento de livraria");
-        primaryStage.setScene(new Scene(root, 370, 250));
-        primaryStage.setResizable(false);
-        primaryStage.show();
+    public void novoCad (){
+        txfEmail.setDisable(false);
+        txfEmail.setEditable(true);
+        txfNome.setDisable(false);
+        txfNome.setEditable(true);
+        btnSalvar.setDisable(false);
     }
 
     public void cliqueMouseBotaoUpdate () throws Exception {
        Autor autor;
         autor = tableAutores.getSelectionModel().getSelectedItem();
-        startUpdate(new Stage());
+       txfNome.setText(autor.getNome());
+       txfEmail.setText(autor.getEmail());
+       btnUpdate.setDisable(true);
+       btnExcluir.setDisable(true);
+        btnTodos.setDisable(true);
+
+
+
+        txfEmail.setDisable(false);
+        txfEmail.setEditable(true);
+        txfNome.setDisable(false);
+        txfNome.setEditable(true);
+        btnSalvar.setDisable(false);
+        btnUpdate.setDisable(true);
+        btnNovo.setDisable(true);
+        tableAutores.setDisable(true);
+
 
 
     }
@@ -125,22 +138,57 @@ public class AutorFormularioController  {
     }
 
     public void salvar() {
+        if (btnUpdate.isDisable()){
+            System.out.println("atualizando");
+
+            Autor autor = new Autor();
+            autor = tableAutores.getSelectionModel().getSelectedItem();
+            autor.setNome(txfNome.getText());
+            autor.setEmail(txfEmail.getText());
+
+            AutorDAO autorDAO = new AutorDAO();
+
+            autorDAO.alterar(autor);
+            preencher_todos();
+            tableAutores.setDisable(false);
+            limparCampos();
+            txfEmail.setDisable(true);
+            txfEmail.setEditable(false);
+            txfNome.setDisable(true);
+            txfNome.setEditable(false);
+            btnUpdate.setDisable(false);
+            btnNovo.setDisable(false);
+            btnSalvar.setDisable(true);
+            btnExcluir.setDisable(false);
+            btnTodos.setDisable(false);
 
 
-        Autor autor = new Autor();
-        autor.setNome(txfNome.getText());
-        autor.setEmail(txfEmail.getText());
+        }else {
 
-        AutorDAO autorDAO = new AutorDAO();
-        autorDAO.inserir(autor);
+            Autor autor = new Autor();
+            autor.setNome(txfNome.getText());
+            autor.setEmail(txfEmail.getText());
 
-        limparCampos();
-        preencher_todos();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Cadastro de autores");
-        alert.setHeaderText("Cadastro de autores");
-        alert.setContentText("Autor cadastrado com sucesso");
-        alert.showAndWait();
+            AutorDAO autorDAO = new AutorDAO();
+            autorDAO.inserir(autor);
+
+            limparCampos();
+            preencher_todos();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Cadastro de autores");
+            alert.setHeaderText("Cadastro de autores");
+            alert.setContentText("Autor cadastrado com sucesso");
+            alert.showAndWait();
+
+
+            //padrao
+            txfEmail.setDisable(true);
+            txfEmail.setEditable(false);
+            txfNome.setDisable(true);
+            txfNome.setEditable(false);
+            btnSalvar.setDisable(true);
+        }
     }
 
     private void limparCampos() {
