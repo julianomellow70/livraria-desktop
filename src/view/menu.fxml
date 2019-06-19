@@ -6,34 +6,39 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="582.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+<AnchorPane prefHeight="582.0" prefWidth="999.0" style="-fx-background-image: url(/images/livros.png);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
-      <Pane layoutY="-6.0" prefHeight="100.0" prefWidth="999.0" style="-fx-background-color: #DAA520;">
+      <Pane layoutY="-6.0" prefHeight="718.0" prefWidth="1811.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="14.0" layoutY="15.0" text="LIVRARIA SOFT">
+            <Button layoutX="21.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#mostrar_livros" prefHeight="63.0" prefWidth="311.0" style="-fx-background-color: #000000;" text="LIVROS" textFill="WHITE">
                <font>
-                  <Font size="61.0" />
-               </font></Label>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="350.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#mostrar_editoras" prefHeight="63.0" prefWidth="311.0" style="-fx-background-color: #000000;" text="EDITORAS" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="674.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#mostrar_autores" prefHeight="63.0" prefWidth="311.0" style="-fx-background-color: #000000;" text="AUTORES" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="1374.0" layoutY="651.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" style="-fx-background-color: #000000;" text="SAIR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="200.0" prefWidth="1845.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label layoutX="8.0" layoutY="122.0" text="LIVRARIA SOFT" textFill="WHITE">
+                     <font>
+                        <Font size="61.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children></Pane>
-      <Button layoutX="36.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#mostrar_autores" prefHeight="244.0" prefWidth="202.0" style="-fx-background-color: #C8641D;" text="AUTORES" textFill="WHITE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Button>
-      <Button layoutX="259.0" layoutY="126.0" mnemonicParsing="false" prefHeight="245.0" prefWidth="202.0" style="-fx-background-color: #C8641D;" text="EDITORAS" textFill="WHITE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Button>
-      <Button layoutX="478.0" layoutY="126.0" mnemonicParsing="false" prefHeight="243.0" prefWidth="202.0" style="-fx-background-color: #C8641D;" text="LIVROS" textFill="WHITE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Button>
-      <Button layoutX="853.0" layoutY="520.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="120.0" style="-fx-background-color: #e60000;" text="SAIR" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

@@ -5,12 +5,17 @@ import dao.MunicipioDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Autor;
 import model.Editora;
 import model.Municipio;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -37,6 +42,8 @@ public class EditoraController {
     private TableColumn<Editora, String> colunaTelefoneEditora;
     @FXML
     private TableColumn<Editora, String> colunaMunicipioEditora;
+    @FXML
+    private Button btnNovoMunicipio;
 
     public void preencher_todos() {
 
@@ -141,6 +148,7 @@ public class EditoraController {
         txfEndereco.setDisable(false);
         txfBairro.setDisable(false);
         cbMunicipio.setDisable(false);
+        btnNovoMunicipio.setDisable(false);
     }
 
     public void bloquearcampos(){
@@ -157,6 +165,8 @@ public class EditoraController {
         btnNovo.setDisable(true);
         btnExcluir.setDisable(true);
         tableEditora.setDisable(true);
+        cbMunicipio.setDisable(false);
+        btnNovoMunicipio.setDisable(false);
 
         txfBairro.setDisable(false);
         txfEndereco.setDisable(false);
@@ -182,6 +192,14 @@ public class EditoraController {
         preencher_todos();
     }
 
+    public void mostrar_municipios() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/municipio.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Sistema gerenciamento de livraria");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
 
 
 

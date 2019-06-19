@@ -27,17 +27,17 @@
           <TableColumn fx:id="colunaNomeEstado" prefWidth="465.0" text="ESTADO" />
         </columns>
       </TableView>
-      <Button id="btnSalvar" fx:id="btnSalvar" layoutX="41.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
+      <Button id="btnSalvar" fx:id="btnSalvar" layoutX="41.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #000000;" text="Salvar" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
       </Button>
-      <Button id="btnSalvar" fx:id="btnExcluir" layoutX="461.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoExcluir" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Excluir" textFill="WHITE">
+      <Button id="btnSalvar" fx:id="btnExcluir" layoutX="461.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoExcluir" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #000000;" text="Excluir" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
       </Button>
-      <Button id="btnSalvar" fx:id="btnUpdate" layoutX="330.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoUpdate" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Update" textFill="WHITE">
+      <Button id="btnSalvar" fx:id="btnUpdate" layoutX="330.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoUpdate" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>

@@ -58,27 +58,27 @@ public class AutorFormularioController  {
 
 
     public void passarMouseBotaoTodos (){
-    btnTodos.setStyle("-fx-background-color: #000000;");
-    btnTodos.setTextFill(Color.WHITE);
+    btnTodos.setStyle("-fx-background-color: #FFFFFF;");
+    btnTodos.setTextFill(Color.BLACK);
     }
     public void tirarMouseBotaoTodos(){
-        btnTodos.setStyle("-fx-background-color: #D2691E;");
-        btnTodos.setTextFill(Color.BLACK);
+        btnTodos.setStyle("-fx-background-color: #000000;");
+        btnTodos.setTextFill(Color.WHITE);
     }
     public void passarMouseBotaoExcluir (){
+        btnExcluir.setStyle("-fx-background-color: #FFFFFF;");
+        btnExcluir.setTextFill(Color.BLACK);
+    }
+    public void tirarMouseBotaoExcluir(){
         btnExcluir.setStyle("-fx-background-color: #000000;");
         btnExcluir.setTextFill(Color.WHITE);
     }
-    public void tirarMouseBotaoExcluir(){
-        btnExcluir.setStyle("-fx-background-color: #B22222;");
-        btnExcluir.setTextFill(Color.WHITE);
-    }
     public void passarMouseBotaoUpdate (){
-        btnUpdate.setStyle("-fx-background-color: #000000;");
-        btnUpdate.setTextFill(Color.WHITE);
+        btnUpdate.setStyle("-fx-background-color: #FFFFFF;");
+        btnUpdate.setTextFill(Color.BLACK);
     }
     public void tirarMouseBotaoUpdate(){
-        btnUpdate.setStyle("-fx-background-color: #B22222;");
+        btnUpdate.setStyle("-fx-background-color: #000000;");
         btnUpdate.setTextFill(Color.WHITE);
     }
 

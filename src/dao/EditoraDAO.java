@@ -130,4 +130,28 @@ public class EditoraDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public int retornarIDEditora (String editora){
+        String sql = "Select id from editoras where nome = '"+editora+"';";
+        int id = 0;
+        try {
+            //preparar a conexao
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            // Executar
+            ResultSet resultados = stmt.executeQuery();
+
+            //percorrer os resultados
+            while (resultados.next()) {
+
+                id = resultados.getInt("id");
+            }
+            //fechar a conexao
+            conexao.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        }
+
+        return id;
+    }
 }

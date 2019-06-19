@@ -57,7 +57,6 @@ public class EstadoController {
             e.setId(estadoUpdate.getId());
         ed.alterar(e);
 
-
         }else{
             ed.inserir(e);
         }

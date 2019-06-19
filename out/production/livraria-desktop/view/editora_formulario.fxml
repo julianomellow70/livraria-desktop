@@ -27,21 +27,21 @@
                         <Font name="Dyuthi" size="18.0" />
                     </font>
                 </Label>
-                <Button id="btnSalvar" fx:id="btnSalvar" disable="true" layoutX="132.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
+                <Button id="btnSalvar" fx:id="btnSalvar" disable="true" layoutX="132.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #000000;" text="Salvar" textFill="WHITE">
                     <font>
                         <Font name="Dyuthi" size="18.0" />
                     </font>
                 </Button>
-                <Pane layoutX="-5.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="1047.0" style="-fx-background-color: #DAA520;">
+                <Pane layoutX="-5.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="1047.0" style="-fx-background-color: #000000;">
                     <children>
-                        <Label layoutX="23.0" layoutY="-7.0" prefHeight="16.0" prefWidth="290.0" text="Editoras">
+                        <Label layoutX="23.0" layoutY="-7.0" prefHeight="16.0" prefWidth="290.0" text="Editoras" textFill="WHITE">
                             <font>
                                 <Font name="Dyuthi" size="48.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-            <Button id="btnSalvar" fx:id="btnNovo" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoNovo" prefHeight="18.0" prefWidth="111.0" style="-fx-background-color: #D2691E;" text="Novo" textFill="WHITE">
+            <Button id="btnSalvar" fx:id="btnNovo" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoNovo" prefHeight="18.0" prefWidth="111.0" style="-fx-background-color: #000000;" text="Novo" textFill="WHITE">
                <font>
                   <Font name="Dyuthi" size="18.0" />
                </font>
@@ -70,7 +70,7 @@
                </font>
             </Label>
             <ComboBox fx:id="cbMunicipio" disable="true" layoutX="350.0" layoutY="232.0" prefHeight="31.0" prefWidth="290.0" />
-            <Button id="btnSalvar" fx:id="btnSalvar1" disable="true" layoutX="646.0" layoutY="237.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoSalvar" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #D2691E;" text="NOVO" textFill="WHITE">
+            <Button id="btnSalvar" fx:id="btnNovoMunicipio" disable="true" layoutX="646.0" layoutY="237.0" mnemonicParsing="false" onMouseClicked="#mostrar_municipios" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #000000;" text="NOVO" textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
@@ -91,7 +91,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-          <Button fx:id="btnExcluir" layoutX="842.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoExcluir" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Excluir" textFill="WHITE">
+          <Button fx:id="btnExcluir" layoutX="842.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoExcluir" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Excluir" textFill="WHITE">
               <font>
                   <Font name="Dyuthi" size="18.0" />
               </font>
@@ -99,7 +99,7 @@
                   <Cursor fx:constant="HAND" />
               </cursor>
           </Button>
-      <Button fx:id="btnUpdate" layoutX="744.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoUpdate" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Update" textFill="WHITE">
+      <Button fx:id="btnUpdate" layoutX="744.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#cliqueBotaoUpdate" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>

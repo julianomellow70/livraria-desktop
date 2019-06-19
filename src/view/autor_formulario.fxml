@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="744.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AutorFormularioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="744.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AutorFormularioController">
     <children>
         <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="325.0" prefWidth="745.0" style="-fx-background-color: #;">
             <children>
@@ -26,26 +26,26 @@
                         <Font name="Dyuthi" size="18.0" />
                     </font>
                 </Label>
-                <Button id="btnSalvar" fx:id="btnSalvar" disable="true" layoutX="160.0" layoutY="215.0" mnemonicParsing="false" onAction="#salvar" onDragEntered="#passarMouseBotaoTodos" onMouseDragExited="#tirarMouseBotaoTodos" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #D2691E;" text="Salvar" textFill="WHITE">
+                <Button id="btnSalvar" fx:id="btnSalvar" disable="true" layoutX="160.0" layoutY="215.0" mnemonicParsing="false" onAction="#salvar" onDragEntered="#passarMouseBotaoTodos" onMouseDragExited="#tirarMouseBotaoTodos" prefHeight="41.0" prefWidth="121.0" style="-fx-background-color: #000000;" text="Salvar" textFill="WHITE">
                     <font>
                         <Font name="Dyuthi" size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="btnTodos" layoutX="640.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#preencher_todos" onMouseEntered="#passarMouseBotaoTodos" onMouseExited="#tirarMouseBotaoTodos" prefHeight="41.0" prefWidth="91.0" style="-fx-background-color: #D2691E;" text="Todos" textFill="WHITE">
+                <Button fx:id="btnTodos" layoutX="640.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#preencher_todos" onMouseEntered="#passarMouseBotaoTodos" onMouseExited="#tirarMouseBotaoTodos" prefHeight="41.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Todos" textFill="WHITE">
                     <font>
                         <Font name="Dyuthi" size="18.0" />
                     </font>
                 </Button>
-                <Pane layoutX="-5.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="750.0" style="-fx-background-color: #DAA520;">
+                <Pane layoutX="-5.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="750.0" style="-fx-background-color: #000000;">
                     <children>
-                        <Label layoutX="23.0" layoutY="-7.0" prefHeight="16.0" prefWidth="290.0" text="Autores">
+                        <Label layoutX="23.0" layoutY="-7.0" prefHeight="16.0" prefWidth="290.0" text="Autores" textFill="WHITE">
                             <font>
                                 <Font name="Dyuthi" size="48.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-            <Button id="btnSalvar" fx:id="btnNovo" layoutX="45.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#novoCad" prefHeight="18.0" prefWidth="111.0" style="-fx-background-color: #D2691E;" text="Novo" textFill="WHITE">
+            <Button id="btnSalvar" fx:id="btnNovo" layoutX="45.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#novoCad" prefHeight="18.0" prefWidth="111.0" style="-fx-background-color: #000000;" text="Novo" textFill="WHITE">
                <font>
                   <Font name="Dyuthi" size="18.0" />
                </font>
@@ -62,7 +62,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-          <Button fx:id="btnExcluir" layoutX="639.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#cliqueMouseBotaoExcluir" onMouseEntered="#passarMouseBotaoExcluir" onMouseExited="#tirarMouseBotaoExcluir" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Excluir" textFill="WHITE">
+          <Button fx:id="btnExcluir" layoutX="639.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#cliqueMouseBotaoExcluir" onMouseEntered="#passarMouseBotaoExcluir" onMouseExited="#tirarMouseBotaoExcluir" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Excluir" textFill="WHITE">
               <font>
                   <Font name="Dyuthi" size="18.0" />
               </font>
@@ -70,7 +70,7 @@
                   <Cursor fx:constant="HAND" />
               </cursor>
           </Button>
-      <Button fx:id="btnUpdate" layoutX="541.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#cliqueMouseBotaoUpdate" onMouseEntered="#passarMouseBotaoUpdate" onMouseExited="#tirarMouseBotaoUpdate" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #B22222;" text="Update" textFill="WHITE">
+      <Button fx:id="btnUpdate" layoutX="541.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#cliqueMouseBotaoUpdate" onMouseEntered="#passarMouseBotaoUpdate" onMouseExited="#tirarMouseBotaoUpdate" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>

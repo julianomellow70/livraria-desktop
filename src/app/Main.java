@@ -18,10 +18,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/estado.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/menu.fxml"));
 
         primaryStage.setTitle("Sistema gerenciamento de livraria");
-        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.setScene(new Scene(root, 1500, 700));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
